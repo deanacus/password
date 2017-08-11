@@ -1,4 +1,4 @@
-# Upstart
+# Password
 
 Super simple password generator
 

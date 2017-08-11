@@ -20,7 +20,7 @@ function generatePassword(passwordLength) {
   var target = document.querySelector(".password");
   for (i = 0; i < passwordLength; i++) {
     var randomCharacter = charList[Math.floor(Math.random() * charList.length)];
-    password = password + randomCharacter;
+    password += randomCharacter;
   }
   target.innerHTML = password;
 }
