@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <title>Password Generator</title>
+</head>
+
+<body>
+    <main>
+      <div class="password-container">
+        <p data-clipboard-target=".password" class="copy password"></p>
+        <button role="button" data-clipboard-target=".password" class="copy btn">Copy to clipboard</button>
+        <button role="button" class="generate btn">Gimme somethin&apos; different</button>
+      </div>
+
+      <div class="alert hidden center">
+        <h2>Copied!</h2>
+      </div>
+    </main>
+    <footer>
+      <p>Built with &#10084; by Dean Harris</p>
+      <p>Check it out on <a href="https://www.github.com/deanacus/passwordgen/">Github</a></p>
+    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin font-face($name, $src, $weight:normal, $style:normal){
+  @font-face {
+    font-family:$name;
+    src: url('/assets/fonts/' + $src + '.woff2') format('woff2'),
+         url('/assets/fonts/' + $src + '.woff') format('woff'),
+         url('/assets/fonts/' + $src + '.ttf') format('truetype'),
+         url('/assets/fonts/' + $src + '.otf') format("opentype"),
+         url('/assets/fonts/' + $src + '.svg#' + $src) format('svg');
+    font-weight:$weight;
+    font-style:$style;
+  }
+}
+
+@mixin min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// # Grid
+// 
+// USAGE:
+// .class {
+//   @include grid(7,12)
+// }
+
+@mixin grid($col, $grid:$default-cols, $float:left) {
+  width: (($col / $grid) * 100) * 1%;
+  padding: 0 $default-col-padding;
+  overflow: hidden;
+  float: $float;
+}
+
+@mixin fullscreen-menu($menu-bg-color) {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $menu-bg-color;
+  color: white;
+
+  &.is-active {
+    display: block;
+    z-index: 2;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include centre-box;
+  }
+}
+
+@mixin fullscreen-menu-toggle($position) {
+  position: $position;
+  top: 1em;
+  left: 1em;
+
+  &.is-active {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 3;
+  }
+}
