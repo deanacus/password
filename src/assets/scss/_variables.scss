@@ -31,7 +31,7 @@ $display-type: 6rem;
 
 // COLOURS
 
-$background: #222;
+$background: #2B2F37;
 $text: #fdfdfd;
-$highlight: #cb603c;
-$hover: tint($highlight, 10%);
+$highlight: rgb(210, 120, 102);
+$hover: tint($highlight, 25%);
