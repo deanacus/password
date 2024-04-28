@@ -1,21 +1,25 @@
 {
-  "name": "Upstart",
+  "name": "password",
   "version": "0.0.1",
-  "description": "Simple starting point for new web projects",
-  "main": "",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "author": "Dean Harris",
-  "license": "ISC",
+  "license": "MIT",
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
   "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-sass": "^2.3.2"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
