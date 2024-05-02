@@ -1,14 +1,13 @@
 'use client';
 
 import { Button, RepoLink } from '@/components';
-import { useKeyUp } from '@/hooks/useKeyPress';
-import { usePassword } from '@/hooks/usePassword';
+import { useKeyPress, usePassword } from '@/hooks';
 import { Suspense } from 'react';
 
 const Body = () => {
   const { password, generate, copyPassword } = usePassword();
-  useKeyUp('Enter', copyPassword);
-  useKeyUp('Space', generate);
+  useKeyPress('Enter', copyPassword);
+  useKeyPress('Space', generate);
   return (
     <div className="flex flex-col items-center gap-6">
       <p className="text-4xl fnt-bold">{password}</p>
