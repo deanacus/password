@@ -5,8 +5,8 @@ import { useCopy } from './useCopy';
 import { useOptions } from './useOptions';
 
 export const usePassword = () => {
+  const [isClient, setIsClient] = useState(false);
   const { lower, upper, numeric, special, length } = useOptions();
-  const [password, setPassword] = useState<string>('');
   const copy = useCopy();
 
   const generatePassword = useMemo(() => {
@@ -19,8 +19,10 @@ export const usePassword = () => {
     });
   }, [lower, upper, numeric, special, length]);
 
+  const [password, setPassword] = useState<string>(() => generatePassword());
+
   useEffect(() => {
-    setPassword(generatePassword());
+    setIsClient(true);
   }, []);
 
   const copyPassword = useCallback(async () => {
@@ -30,7 +32,7 @@ export const usePassword = () => {
   }, [password]);
 
   return {
-    password: password,
+    password: isClient ? password : '',
     generate: () => setPassword(generatePassword()),
     copyPassword,
   };
